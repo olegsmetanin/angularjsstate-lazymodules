@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Load on demand demo</title>
+</head>
+
+<body>
+    <a href="#!/demand">demand</a>
+    <a href="#!/order">order</a>
+
+    <div ui-view></div>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="src/angular.js"></script>
+    <script type="text/javascript" src="src/angular-ui-router.js"></script>
+    <script type="text/javascript" src="src/lazyinclude.js"></script>
+    <script type="text/javascript" src="src/core/core.js"></script>
+    <script type="text/javascript" src="src/modules/demand/routes.js"></script>
+    <script type="text/javascript" src="src/modules/order/routes.js"></script>
+
+    <!--
+    <script type="text/javascript" src="build/angularjsstate-lazymodules.min.js"></script>
+    -->
+
+    <script>
+        angular.element(document).ready(function() {
+            angular.bootstrap(document, ['core', 'demand', 'order']);
+        });
+    </script>
+</body>
+
+</html>

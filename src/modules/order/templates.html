@@ -1,0 +1,17 @@
+﻿<div>
+
+<script type="text/ng-template" id="order.view">
+	<h1>Order</h1>
+	<hr/>
+	<a href="#!/order/list">Show List</a>
+	<div ui-view></div>
+</script>
+
+<script type="text/ng-template" id="order.list">
+	<h3>List of Order Things</h3>
+	<ul>
+	  <li ng-repeat="thing in things">{{thing}}</li>
+	</ul>
+</script>
+
+</div>

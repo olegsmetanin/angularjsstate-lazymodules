@@ -1,0 +1,17 @@
+﻿<div>
+
+<script type="text/ng-template" id="demand.view">
+	<h1>Demand</h1>
+	<hr/>
+	<a href="#!/demand/list">Show List</a>
+	<div ui-view></div>
+</script>
+
+<script type="text/ng-template" id="demand.list">
+	<h3>List of Demand Items</h3>
+	<ul>
+	  <li ng-repeat="item in items">{{item}}</li>
+	</ul>
+</script>
+
+</div>
