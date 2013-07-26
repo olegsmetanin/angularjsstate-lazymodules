@@ -1,17 +1,33 @@
 ﻿<div>
 
-<script type="text/ng-template" id="demand.view">
-	<h1>Demand</h1>
-	<hr/>
-	<a href="#!/demand/list">Show List</a>
-	<div ui-view></div>
+<script id="demandListFilter" type="text/ng-template">
+    Demand List Filter
 </script>
 
-<script type="text/ng-template" id="demand.list">
-	<h3>List of Demand Items</h3>
-	<ul>
-	  <li ng-repeat="item in items">{{item}}</li>
+<script id="demandListGrid" type="text/ng-template">
+	Demands:
+	<ul ng-controller="demandListGridCtrl">
+		<li ng-repeat="demand in demands"><a href="#!/demands/{{demand.id}}/common">{{demand.name}}</a></li>
 	</ul>
 </script>
+
+<script id="demandTabs" type="text/ng-template">
+    <div ng-controller="demandTabsCtrl" tabbar></div>
+</script>
+
+<script id="demandCommonTab" type="text/ng-template">
+	<div ng-controller="demandCommonTabCtrl">
+		Demand id:{{demandid}}
+	</div>
+</script>
+
+<script id="demandOrdersTabFilter" type="text/ng-template">
+    Demand Order Tab Filter
+</script>
+
+<script id="demandOrdersTabGrid" type="text/ng-template">
+    Demands Order Tab Grid
+</script>
+
 
 </div>

@@ -7,8 +7,8 @@
 </head>
 
 <body>
-    <a href="#!/demand">demand</a>
-    <a href="#!/order">order</a>
+
+    <div ng-include="'breadcrumbs'"></div>
 
     <div ui-view></div>
 
@@ -30,6 +30,81 @@
             angular.bootstrap(document, ['core', 'demand', 'order']);
         });
     </script>
+
+    <script id="home" type="text/ng-template">
+        Home page
+    </script>
+
+    <script id="page1C" type="text/ng-template" >
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div ui-view="content"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+    <script id="page2C" type="text/ng-template" >
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div ui-view="sidebar"></div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div ui-view="content"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="tabPage1C" type="text/ng-template">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div ui-view="tabbar"></div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div ui-view="content"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="tabPage2C" type="text/ng-template">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div ui-view="tabbar"></div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span3">
+                    <div ui-view="sidebar"></div>
+                </div>
+                <div class="span9">
+                    <div ui-view="content"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="breadcrumbs" type="text/ng-template">
+        <div ng-controller="breadcrumbs">
+            *
+            <span ng-repeat="breadcrumb in current">
+                <a href="#!{{breadcrumb.url}}">{{breadcrumb.name}}</a> *
+            </span>
+        </div>
+
+    </script>
+
+
 </body>
 
 </html>
